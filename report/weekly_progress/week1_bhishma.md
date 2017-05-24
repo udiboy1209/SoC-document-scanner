@@ -26,9 +26,9 @@ and their associated descriptors(des).
 
 Here is a test image and its result:
 
- ![alt text](https://github.com/glitchinthematrix/SoC-document-scanner/blob/master/Report/original.jpg)
+ ![alt text](https://github.com/glitchinthematrix/SoC-document-scanner/blob/master/report/images/original.jpg)
  
- ![alt text](https://github.com/glitchinthematrix/SoC-document-scanner/blob/master/Report/ORBtestcase.png)
+ ![alt text](https://github.com/glitchinthematrix/SoC-document-scanner/blob/master/report/images/ORBtestcase.png)
  
  The white dots show the features that ORB has detected.
  
