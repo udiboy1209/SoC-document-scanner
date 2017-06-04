@@ -5,31 +5,39 @@ from Homography import*
 import numpy as np
 from numpy import linalg as lin
 
-im1=cv2.imread("1.jpg",0)
-im2=cv2.imread("2.jpg",0)
 
-
-images=[im1,im2]
-
-
-
-h,w=im1.shape
-ly=2*int(h)
-lx=2*int(w)
-globalimg=np.zeros((ly,lx),dtype='uint8')
-
-globalimg[:int(h),:int(w)]=im1
-
-M=find_homography(images[0],images[1])
-M=lin.inv(M)
-
-img=cv2.warpPerspective(images[1],M,(lx,ly))
-globalimg=np.add(globalimg,img)
+img1=cv2.imread('cover1.jpg',0)
+img2=cv2.imread('cover2.jpg',0)
+img3=cv2.imread('cover3.jpg',0)
+img4=cv2.imread('cover4.jpg',0)
+images=[img1,img2,img3,img4]
+homographies=find_homography(images)
+h,w=images[0].shape
+homo=homographies[0]
+transformedimg=[]
+for i in range(len(homographies)):
 	
-plt.imshow(globalimg,cmap="gray"),plt.show()
+	img=cv2.warpPerspective(images[i+1],homo,(2*w,2*h))
+	transformedimg.append(img)
+	if (i+1) != len(homographies):
+	  homo=np.dot(homo,homographies[i+1])
+	
+#homography=np.dot(homographies[0],homographies[1])
+
+
+#img=cv2.warpPerspective(img2,homographies[0],(w,h))   
+plt.subplot(221),plt.imshow(img1,cmap='gray')
+plt.subplot(222),plt.imshow(transformedimg[0],cmap='gray')
+plt.subplot(223),plt.imshow(transformedimg[1],cmap='gray')
+plt.subplot(224),plt.imshow(transformedimg[2],cmap='gray')
+plt.show()
 
 
 
 
 
 
+
+
+
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						

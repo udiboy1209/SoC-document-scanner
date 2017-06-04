@@ -14,6 +14,6 @@ def Matching_features(im1,im2):
     matches=bf.knnMatch(des1,des2,k=2)
     good=[]
     for m,n in matches:
-        if m.distance<0.75*n.distance:
+        if m.distance<0.70*n.distance:
             good.append(m)
     return good
