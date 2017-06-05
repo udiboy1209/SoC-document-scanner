@@ -68,23 +68,24 @@ Many a times when we take in input images, some of them may be in different plan
 
 ```
 def  find_homography(images): #images is a list containing all images
-  homographies=[None]*(len(images)-1)
-#element "i" of homographies contains homography to warp images[i] into images[i+1]
+  homographies=[]
+#element "i" of homographies contains homography to warp images[i+1] into images[i]
   for i in range(len(images)-1):
-  	des1,kp1=Image_ORB(images[i])
-  	des2,kp2=Image_ORB(images[i+1])
-	matches=Matching_features(images[i],images[i+1])
-	if len(matches)>10
-	  src_points=np.float32([kp1[m.queryIdx].pt for m in matches]).reshape(-1,1,2)
-	  dst_points=np.float32([kp2[m.trainIdx].pt for m in matches]).reshape(-1,1,2)
-	  M,mask=cv2.findHomography(src_pts,dst_pts,cv2.RANSAC,5.0)
-	  homographies[i]=M
+    des1,kp1=Image_ORB(images[i+1])
+    des2,kp2=Image_ORB(images[i])
+    matches=Matching_features(images[i+1],images[i])
+    print len(matches)
+    if len(matches)>10:
+     src_points=np.float32([kp1[m.queryIdx].pt for m in matches]).reshape(-1,1,2)
+     dst_points=np.float32([kp2[m.trainIdx].pt for m in matches]).reshape(-1,1,2)
+     M,mask=cv2.findHomography(src_points,dst_points,cv2.RANSAC,5.0)
+     homographies.append(M)
 
   return homographies
   
   ```
 
-Homography is found out using RANSAC (Random Sample Consensus). OpenCV has an inbuilt findHomography() function which takes in points of the "query" image and the "train" image and gives the Homography between the two. I plan to warp each image into its RHS image in the "images" list until we reach its end. Hence I made an empty list called "homographies" where index i contains Homography of images[i] w.r.t. images[i+1].
+Homography is found out using RANSAC (Random Sample Consensus). OpenCV has an inbuilt findHomography() function which takes in points of the "query" image and the "train" image and gives the Homography between the two. I plan to warp each image into its RHS image in the "images" list until we reach its end. Hence I made an empty list called "homographies" where index i contains Homography of images[i+1] w.r.t. images[i].
 Some testcases I ran are as follows:
 
 Testcase 1:
