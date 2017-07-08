@@ -1,0 +1,94 @@
+
+
+<MyScreenManager>:
+
+	WelcomeScreen:
+		id:First
+		BoxLayout:
+			orientation:"vertical"
+			Label:
+				text: "Welcome to PanCam. Scanning large documents made easy!"
+				font_size: 30
+				text_size: self.width, None
+		    	height: self.texture_size[1]
+		    	halign:'center'
+		    	canvas.before:
+		    		Color:
+		    			rgba:0,0,1,1
+		    		Rectangle:
+                		pos: self.pos
+                		size: self.size
+
+			Label:
+				text:"For best scan results capture images from top to bottom in landscape mode! "
+				font_size: 17
+				text_size: self.width, None
+				height: self.texture_size[1]
+		    	halign:'center'
+		    	canvas.before:
+		    		Color:
+		    			rgba:0,0,1,1
+		    		Rectangle:
+                		pos: self.pos
+                		size: self.size
+			BoxLayout:
+				Button:
+					text:"Press here to start!"
+					font_size: 20
+					height:self.texture_size[1]
+					on_press:app.root.current="Second"
+
+
+	CameraScreen:
+		name: "Second"
+		BoxLayout:
+			orientation:"vertical"
+			Label:
+				text:"Click images of your document! (Maximum 4 allowed)"
+				font_size: 15
+				text_size: self.width, None
+				height: self.texture_size[1]
+		    	halign:'center'
+			BoxLayout:
+				Button:
+					id:captureButton
+					text:"Capture image"
+					size_hint_y:None
+					height:'48dp'
+					on_press:root.take_shot()
+				Button:
+					text:"Finished capturing images!"
+					size_hint_y:None
+					height:'48dp'
+					on_press: app.root.current="Third"
+	LoadingScreen:
+		name:"Third"
+		BoxLayout:
+			orientation: "vertical"
+			Label:
+				text:"Your image will load in a short while!"
+				font_size: 15
+				text_size: self.width, None
+				height: self.texture_size[1]
+		    	halign:'center'
+
+
+			
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
