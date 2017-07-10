@@ -9,8 +9,11 @@ from kivy.uix.popup import Popup
 import time
 import cv2
 import numpy as np
+from image_alignment import*
+from blending import*
 
-image_paths=[]
+image_paths=["1.jpg","2.jpg","3.jpg"]
+
 class MsgPopup(Popup):
 	def __init__(self, msg):
 		super(MsgPopup, self).__init__()
@@ -25,9 +28,35 @@ class MyScreenManager(ScreenManager):
 		path='/storage/emulated/0/DCIM/Camera/IMG_'+e+'.jpg'
 		image_paths.append(path)
 		self.camera.take_picture(path,self.camera_callback) #Take a picture and save at this location. After will call done() callback
-		
+	def make_Pan(self):
+		label=self.ids['change']
+		label.text="Image will load in a short while"
+		images=[]
+		for i in range(len(image_paths)):
+			images.append(cv2.imread(image_paths[i],0))
+		for i in range(len(images)):
+			images[i]=cv2.resize(images[i],None,fx=0.25,fy=0.25,interpolation = cv2.INTER_CUBIC)
+		transformedimg=Image_Align(images)
+		finalimg=transformedimg[0]
+		for i in range(1,len(transformedimg)):
+			finalimg=multiband_blend(finalimg,transformedimg[i],6)
+		points = finalimg.nonzero()
+		xmax,ymax = max(points[0]), max(points[1])
+		finalimg=finalimg[:xmax,:ymax]
+		e= time.strftime("%Y%m%d_%H%M%S")
+		path='/storage/emulated/0/DCIM/Camera/IMG_'+e+'.jpg'
+		cv2.imwrite("final.png",finalimg)
+
+
+		self.current="Fourth"
+		im=self.ids["im"]
+		im.reload()
+
+		return
+                
 	def camera_callback(self,path):
 		return
+
 class WelcomeScreen(Screen):
 	pass
 
@@ -37,16 +66,10 @@ class CameraScreen(Screen):
 	
 
 class LoadingScreen(Screen):
-	
-	def make_Pan():
-		images=[]
-		for i in range(len(image_paths)):
-			images.append(cv2.imread(image_paths[i],0))
-		for i in range(len(images)):
-			images[i]=cv2.resize(images[i],None,fx=0.25,fy=0.25,interpolation = cv2.INTER_CUBIC)
-		transformedimg=Image_Align(images)
-		finalimg=transformedimg[0]
+    pass
 
+class FinalScreen(Screen):
+	pass
 
 
 

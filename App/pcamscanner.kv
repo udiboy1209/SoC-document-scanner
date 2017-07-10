@@ -35,7 +35,7 @@
 				Button:
 					text:"Press here to start!"
 					font_size: 20
-					height:self.texture_size[1]
+					height:'48dp'
 					on_press:app.root.current="Second"
 
 
@@ -44,6 +44,7 @@
 		BoxLayout:
 			orientation:"vertical"
 			Label:
+				id: change
 				text:"Click images of your document! (Maximum 4 allowed)"
 				font_size: 15
 				text_size: self.width, None
@@ -60,17 +61,22 @@
 					text:"Finished capturing images!"
 					size_hint_y:None
 					height:'48dp'
-					on_press: app.root.current="Third"
-	LoadingScreen:
-		name:"Third"
+					on_press:root.make_Pan()
+	FinalScreen:
+		name:"Fourth"
 		BoxLayout:
 			orientation: "vertical"
-			Label:
-				text:"Your image will load in a short while!"
-				font_size: 15
-				text_size: self.width, None
-				height: self.texture_size[1]
-		    	halign:'center'
+			Image:
+				id:im
+				source:"final.png"
+			Button:
+				text: "Done"
+				size_hint_y:None
+				height:'48dp'
+
+
+
+
 
 
 			
