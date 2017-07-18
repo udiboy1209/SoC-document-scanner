@@ -1,0 +1,2 @@
+/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ar qc ../../lib/armeabi-v7a/libopencv_photo.a  CMakeFiles/opencv_photo.dir/src/denoising.cpp.o CMakeFiles/opencv_photo.dir/src/inpaint.cpp.o
+/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ranlib ../../lib/armeabi-v7a/libopencv_photo.a

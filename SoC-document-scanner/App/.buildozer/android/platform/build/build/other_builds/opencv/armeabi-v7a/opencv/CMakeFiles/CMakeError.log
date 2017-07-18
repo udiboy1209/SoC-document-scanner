@@ -1,0 +1,100 @@
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_24a1c/fast"
+make -j5 -f CMakeFiles/cmTC_24a1c.dir/build.make CMakeFiles/cmTC_24a1c.dir/build
+make[1]: Entering directory '/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_24a1c.dir/TestEndianess.c.o
+/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc  -DANDROID -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm/usr/include -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a/include  -fexceptions -Wno-psabi --sysroot=/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm -fpic -funwind-tables -finline-limit=64 -fsigned-char -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fdata-sections -ffunction-sections -Wa,--noexecstack    -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -fomit-frame-pointer  -mthumb -fomit-frame-pointer -fno-strict-aliasing -O3 -DNDEBUG   -o CMakeFiles/cmTC_24a1c.dir/TestEndianess.c.o   -c /home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTC_24a1c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24a1c.dir/link.txt --verbose=1
+/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc  -fexceptions -Wno-psabi --sysroot=/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm -fpic -funwind-tables -finline-limit=64 -fsigned-char -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fdata-sections -ffunction-sections -Wa,--noexecstack    -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -fomit-frame-pointer  -mthumb -fomit-frame-pointer -fno-strict-aliasing -O3 -DNDEBUG   -Wl,--fix-cortex-a8 -Wl,--no-undefined -Wl,--gc-sections -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,-z,nocopyreloc  CMakeFiles/cmTC_24a1c.dir/TestEndianess.c.o -o cmTC_24a1c  -L/libs/armeabi-v7a -rdynamic  "/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a/libsupc++.a"
+make[1]: Leaving directory '/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the include file io.h exists failed with the following output:
+Change Dir: /home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_efd80/fast"
+make -j5 -f CMakeFiles/cmTC_efd80.dir/build.make CMakeFiles/cmTC_efd80.dir/build
+make[1]: Entering directory '/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_efd80.dir/CheckIncludeFile.c.o
+/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc  -DANDROID -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm/usr/include -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a/include  -fexceptions -Wno-psabi --sysroot=/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm -fpic -funwind-tables -finline-limit=64 -fsigned-char -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fdata-sections -ffunction-sections -Wa,--noexecstack    -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -fomit-frame-pointer  -mthumb -fomit-frame-pointer -fno-strict-aliasing -O3 -DNDEBUG   -o CMakeFiles/cmTC_efd80.dir/CheckIncludeFile.c.o   -c /home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:16: fatal error: io.h: No such file or directory
+ #include <io.h>
+                ^
+compilation terminated.
+CMakeFiles/cmTC_efd80.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_efd80.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_efd80.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_efd80/fast' failed
+make: *** [cmTC_efd80/fast] Error 2
+
+
+Determining if the function jbg_newlen exists failed with the following output:
+Change Dir: /home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9bd26/fast"
+make -j5 -f CMakeFiles/cmTC_9bd26.dir/build.make CMakeFiles/cmTC_9bd26.dir/build
+make[1]: Entering directory '/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9bd26.dir/CheckFunctionExists.c.o
+/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc  -DANDROID -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm/usr/include -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a/include  -fexceptions -Wno-psabi --sysroot=/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm -fpic -funwind-tables -finline-limit=64 -fsigned-char -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fdata-sections -ffunction-sections -Wa,--noexecstack    -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -fomit-frame-pointer -DCHECK_FUNCTION_EXISTS=jbg_newlen -mthumb -fomit-frame-pointer -fno-strict-aliasing -O3 -DNDEBUG   -o CMakeFiles/cmTC_9bd26.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+/usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ char CHECK_FUNCTION_EXISTS();
+ ^
+Linking C executable cmTC_9bd26
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9bd26.dir/link.txt --verbose=1
+/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc  -fexceptions -Wno-psabi --sysroot=/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm -fpic -funwind-tables -finline-limit=64 -fsigned-char -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fdata-sections -ffunction-sections -Wa,--noexecstack    -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -fomit-frame-pointer -DCHECK_FUNCTION_EXISTS=jbg_newlen -mthumb -fomit-frame-pointer -fno-strict-aliasing -O3 -DNDEBUG   -Wl,--fix-cortex-a8 -Wl,--no-undefined -Wl,--gc-sections -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,-z,nocopyreloc  CMakeFiles/cmTC_9bd26.dir/CheckFunctionExists.c.o -o cmTC_9bd26  -L/libs/armeabi-v7a -rdynamic  "/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a/libsupc++.a"
+CMakeFiles/cmTC_9bd26.dir/CheckFunctionExists.c.o:CheckFunctionExists.c:function main: error: undefined reference to 'jbg_newlen'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_9bd26.dir/build.make:97: recipe for target 'cmTC_9bd26' failed
+make[1]: *** [cmTC_9bd26] Error 1
+make[1]: Leaving directory '/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9bd26/fast' failed
+make: *** [cmTC_9bd26/fast] Error 2
+
+
+Determining if the include file search.h exists failed with the following output:
+Change Dir: /home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_add08/fast"
+make -j5 -f CMakeFiles/cmTC_add08.dir/build.make CMakeFiles/cmTC_add08.dir/build
+make[1]: Entering directory '/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_add08.dir/CheckIncludeFile.c.o
+/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc  -DANDROID -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm/usr/include -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include -isystem /home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a/include  -fexceptions -Wno-psabi --sysroot=/home/glitchinthematrix/.buildozer/android/platform/android-ndk-r9c/platforms/android-8/arch-arm -fpic -funwind-tables -finline-limit=64 -fsigned-char -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fdata-sections -ffunction-sections -Wa,--noexecstack    -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -fomit-frame-pointer  -mthumb -fomit-frame-pointer -fno-strict-aliasing -O3 -DNDEBUG   -o CMakeFiles/cmTC_add08.dir/CheckIncludeFile.c.o   -c /home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:20: fatal error: search.h: No such file or directory
+ #include <search.h>
+                    ^
+compilation terminated.
+CMakeFiles/cmTC_add08.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_add08.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_add08.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_add08/fast' failed
+make: *** [cmTC_add08/fast] Error 2
+
+

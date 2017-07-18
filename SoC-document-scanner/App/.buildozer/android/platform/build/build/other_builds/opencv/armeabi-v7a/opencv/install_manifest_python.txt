@@ -1,0 +1,2 @@
+/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/python-installs/PanoramaDocumentScanner/lib/python2.7/site-packages/cv2.so
+/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/python-installs/PanoramaDocumentScanner/lib/python2.7/site-packages/cv.py

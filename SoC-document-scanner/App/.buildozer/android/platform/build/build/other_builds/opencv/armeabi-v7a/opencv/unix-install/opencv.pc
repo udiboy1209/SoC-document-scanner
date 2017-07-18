@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=/home/glitchinthematrix/SoC-document-scanner/App/.buildozer/android/platform/build/build/other_builds/opencv/armeabi-v7a/opencv/install
+exec_prefix=${prefix}
+libdir=
+includedir_old=${prefix}/sdk/native/jni/include/opencv
+includedir_new=${prefix}/sdk/native/jni/include
+
+Name: OpenCV
+Description: Open Source Computer Vision Library
+Version: 2.4.10.1
+Libs:  ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_contrib.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_stitching.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_nonfree.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_superres.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_ocl.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_ts.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_videostab.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_gpu.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_photo.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_objdetect.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_legacy.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_video.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_ml.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_calib3d.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_features2d.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_highgui.a ${exec_prefix}/share/OpenCV/3rdparty/sdk/native/libs/armeabi-v7a/libIlmImf.a ${exec_prefix}/share/OpenCV/3rdparty/sdk/native/libs/armeabi-v7a/liblibjasper.a ${exec_prefix}/share/OpenCV/3rdparty/sdk/native/libs/armeabi-v7a/liblibtiff.a ${exec_prefix}/share/OpenCV/3rdparty/sdk/native/libs/armeabi-v7a/liblibpng.a ${exec_prefix}/share/OpenCV/3rdparty/sdk/native/libs/armeabi-v7a/liblibjpeg.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_imgproc.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_flann.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_androidcamera.a ${exec_prefix}/sdk/native/libs/armeabi-v7a/libopencv_core.a -llog -lm -ldl -lz
+Cflags: -I${includedir_old} -I${includedir_new}
