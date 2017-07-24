@@ -88,7 +88,7 @@ fullscreen = 1
 android.permissions = CAMERA
 
 # (int) Android API to use
-android.api = 23
+android.api = 19
 # (int) Minimum API required
 #android.minapi = 15
 

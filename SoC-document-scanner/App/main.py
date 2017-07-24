@@ -12,7 +12,7 @@ import numpy as np
 from image_alignment import*
 from blending import*
 
-image_paths=["1.jpg","2.jpg","3.jpg"]
+image_paths=["/storage/emulated/0/DCIM/Camera/1.jpg","/storage/emulated/0/DCIM/Camera/2.jpg","/storage/emulated/0/DCIM/Camera/3.jpg"]
 
 class MsgPopup(Popup):
 	def __init__(self, msg):
