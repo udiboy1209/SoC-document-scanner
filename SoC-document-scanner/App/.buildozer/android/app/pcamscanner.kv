@@ -8,7 +8,7 @@
 			orientation:"vertical"
 			Label:
 				text: "Welcome to PanCam. Scanning large documents made easy!"
-				font_size: 30
+				font_size: 100
 				text_size: self.width, None
 		    	height: self.texture_size[1]
 		    	halign:'center'
@@ -21,7 +21,7 @@
 
 			Label:
 				text:"For best scan results capture images from top to bottom in landscape mode! "
-				font_size: 17
+				font_size: 100
 				text_size: self.width, None
 				height: self.texture_size[1]
 		    	halign:'center'
@@ -34,7 +34,7 @@
 			BoxLayout:
 				Button:
 					text:"Press here to start!"
-					font_size: 20
+					font_size: 40
 					height:'48dp'
 					on_press:app.root.current="Second"
 
@@ -46,7 +46,7 @@
 			Label:
 				id: change
 				text:"Click images of your document! (Maximum 4 allowed)"
-				font_size: 15
+				font_size: 50
 				text_size: self.width, None
 				height: self.texture_size[1]
 		    	halign:'center'
